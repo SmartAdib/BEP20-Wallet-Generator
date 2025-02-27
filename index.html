@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate BEP20 Address</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.7.1/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .nav {
+            width: 100%;
+            background-color: #007bff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav a i {
+            margin-right: 5px; /* spacing between icon and text */
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        .info {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .icon {
+            width: 50px; /* Set the size you prefer */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy</a>
+        <a href="#donate"><i class="fas fa-heart"></i> Donate</a>
+    </nav>
+
+    <div class="container">
+        <img src="https://raw.githubusercontent.com/SmartAdib/bep20-wallet-generator.github.io/6db70cff6c6f95608200b5932c28fe9da6c14458/logo.webp" alt="BEP20 Icon" class="icon">
+        <h2>Generate BEP20 Address</h2>
+        <button id="generate">Generate New Private Key & Address</button>
+
+        <p>Private Key: <span class="info" id="privateKey"></span></p>
+        <p>Address: <span class="info" id="address"></span></p>
+
+        <div class="footer">Keep your private key safe!</div>
+    </div>
+
+    <script>
+        // Generate a new address
+        function generateAddress() {
+            const web3 = new Web3();
+            const account = web3.eth.accounts.create();
+            document.getElementById("privateKey").textContent = account.privateKey;
+            document.getElementById("address").textContent = account.address;
+        }
+
+        // Event Listener for generating address
+        document.getElementById("generate").addEventListener("click", generateAddress);
+    </script>
+</body>
+
+</html>

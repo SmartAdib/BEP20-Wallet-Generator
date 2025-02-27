@@ -25,3 +25,6 @@ The performance of the BEP20 Wallet Generator can be different between browsers.
 Any address generated with BEP20 Wallet Generator is BEP-20 compatible, which means you can use it for your own BEP20 token, an ICO, an airdrop, or just to withdraw your funds from an exchange.
 
 The BEP20 address and private key can be used in all the wallets like Metamask, Trust Wallet, etc...
+
+# License
+This library licensed under MIT.

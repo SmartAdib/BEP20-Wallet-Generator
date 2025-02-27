@@ -8,7 +8,7 @@ Simply click Generate to get a new BEP20 address.
 
 It's a free tool to generate BEP20 addresses securely using your web browser.
 
-# How to generate BEP20 wallet for Binance Smart Chain ?
+# How to generate BEP20 wallet for Binance Smart Chain?
 
 - Click Generate.
 - When done, click on the private key to view it.

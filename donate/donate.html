@@ -51,11 +51,28 @@
             font-size: 16px;
             text-decoration: none;
             margin: 10px 0;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
 
         .donation-button:hover {
             background-color: #0056b3;
+        }
+
+        .copy-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .copy-button:hover {
+            background-color: #218838;
         }
 
         .footer {
@@ -64,31 +81,48 @@
             color: #777;
             text-align: center;
         }
+
+        .message {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+        }
     </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const message = document.getElementById('copy-message');
+                message.textContent = "Address copied to clipboard!";
+                setTimeout(() => {
+                    message.textContent = "";
+                }, 3000);
+            }, (err) => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
 </head>
 
 <body>
     <div class="container">
         <h1>Support Us with a Donation</h1>
-        <p>Your contributions help us maintain and improve our BEP20 wallet address generator. Every donation, big or small, makes a difference!</p>
+        <p>Your contributions help us maintain and improve our services. Every donation, big or small, makes a difference!</p>
 
         <h2>How to Donate</h2>
-        <p>We accept donations in various cryptocurrencies as well as traditional payment methods. Choose the option that is most convenient for you:</p>
+        <p>We accept donations in various cryptocurrencies, including:</p>
 
         <h2>Cryptocurrency Donations</h2>
         <p>You can donate using the following cryptocurrencies:</p>
         <ul>
             <li>
-                <strong>Binance Smart Chain (BNB):</strong>
-                <a href="0x6Aab9eA6a9B9695225048290313f40f3d9C625fA" class="donation-button">Donate BNB</a>
+                <strong>Binance Smart Chain (BNB):</strong> 
+                <span id="bnb-address">0x6Aab9eA6a9B9695225048290313f40f3d9C625fA</span>
+                <button class="copy-button" onclick="copyToClipboard('0x6Aab9eA6a9B9695225048290313f40f3d9C625fA')">Copy Address</button>
             </li>
         </ul>
+        <div id="copy-message" class="message"></div>
         <p>Thank you for your generous support. Together, we can continue to improve our services!</p>
-    </div>
-
-    <div class="footer">
-        &copy; 2025 - All rights reserved.
     </div>
 </body>
 
-  </html>
+</html>

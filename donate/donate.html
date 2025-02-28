@@ -4,41 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate</title>
+    <title>Support Us with a Donation</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f9f9f9;
+            font-family: 'Arial', sans-serif;
+            background: #f4f7f9;
             margin: 0;
             padding: 20px;
             color: #333;
+            height: 100vh; /* Full height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
             background: white;
-            padding: 25px;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Full width */
+            max-width: 600px; /* Limit maximum width */
+            margin: auto; /* Center horizontally */
+            box-sizing: border-box; /* Included padding in width */
         }
 
         h1 {
             color: #007bff;
-            font-size: 28px;
+            font-size: 32px;
+            text-align: center;
             margin-bottom: 20px;
         }
 
         h2 {
-            margin-top: 20px;
-            font-size: 24px;
+            font-size: 26px;
             color: #007bff;
+            margin-top: 30px;
         }
 
         p {
             margin: 15px 0;
             line-height: 1.6;
             font-size: 16px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e9ecef;
+            border-radius: 12px;
+            margin: 10px 0;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .donation-button {
@@ -48,11 +70,11 @@
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
-            font-size: 16px;
-            text-decoration: none;
-            margin: 10px 0;
+            font-size: 13px;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-decoration: none;
+            margin-left: 15px;
         }
 
         .donation-button:hover {
@@ -76,16 +98,17 @@
         }
 
         .footer {
-            margin-top: 20px;
+            text-align: center;
             font-size: 12px;
             color: #777;
-            text-align: center;
+            margin-top: 30px;
         }
 
         .message {
             margin-top: 10px;
             color: green;
             font-weight: bold;
+            text-align: center;
         }
     </style>
     <script>
@@ -109,19 +132,21 @@
         <p>Your contributions help us maintain and improve our services. Every donation, big or small, makes a difference!</p>
 
         <h2>How to Donate</h2>
-        <p>We accept donations in various cryptocurrencies, including:</p>
+        <p>We accept donations in various cryptocurrencies. Choose an option below:</p>
 
         <h2>Cryptocurrency Donations</h2>
-        <p>You can donate using the following cryptocurrencies:</p>
         <ul>
             <li>
-                <strong>Binance Smart Chain (BNB):</strong> 
-                <span id="bnb-address">0x6Aab9eA6a9B9695225048290313f40f3d9C625fA</span>
+            	<img src="https://raw.githubusercontent.com/SmartAdib/bep20-wallet-generator.github.io/6db70cff6c6f95608200b5932c28fe9da6c14458/logo.webp" alt="BNB Icon" style="width: 24px; height: 24px; margin-right: 10px;">
+                <strong>Binance Smart Chain (BNB)</strong>
                 <button class="copy-button" onclick="copyToClipboard('0x6Aab9eA6a9B9695225048290313f40f3d9C625fA')">Copy Address</button>
+                <a href="https://bscscan.com/address/0x6Aab9eA6a9B9695225048290313f40f3d9C625fA" class="donation-button">Donate BNB</a>
             </li>
+            <!-- Add more cryptocurrencies here -->
         </ul>
+
         <div id="copy-message" class="message"></div>
-        <p>Thank you for your generous support. Together, we can continue to improve our services!</p>
+        <p>Thank you for your generous support! Together, we can continue to make a difference.</p>
     </div>
 </body>
 

@@ -1,6 +1,6 @@
 # BEP20 Wallet Generator
 
-Generate BEP20 addresses quickly and secure.
+Generate BEP20 addresses quickly and secure. 🛡️
 BEP20 Wallet Generator is a free tool using your web browser to generate BEP20 wallet addresses.
 Simply click Generate to get a new BEP20 address.
 
